@@ -1,7 +1,7 @@
 
 8BitMixtapeFirmware
 
-## under construction
+## Under Construction
 
 ```
 // ATMEL ATTINY85 / ARDUINO
@@ -14,5 +14,7 @@
 //             +----+
 ```
 
-2 pot : change parameter
-2 button : sample hold, select song,
+###Docs
+
+- 2 pot : change parameter
+- 2 button : sample hold, select song,
