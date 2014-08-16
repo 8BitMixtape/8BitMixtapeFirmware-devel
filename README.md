@@ -3,6 +3,8 @@
 
 ### Under Construction
 
+###Docs
+
 ```
 // ATMEL ATTINY85 / ARDUINO
 //
@@ -13,8 +15,6 @@
 //    GND  4|         |5  PB0
 //             +----+
 ```
-
-###Docs
 
 - 2 pot : change parameter
 - 2 button : sample hold, select song,
