@@ -16,5 +16,13 @@
 //             +----+
 ```
 
+### How to Compile
+
+- Edit Makefile and change path to avr toolchain
+- type make to compile
+- make flash to upload
+
+### Usage
+
 - 2 pot : change parameter
 - 2 button : sample hold, select song,
