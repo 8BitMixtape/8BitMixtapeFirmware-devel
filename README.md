@@ -1,5 +1,5 @@
 
- # 8BitMixtapeFirmware
+8BitMixtapeFirmware
 
 ```
 // ATMEL ATTINY85 / ARDUINO
@@ -11,3 +11,6 @@
 //    GND  4|         |5  PB0
 //             +----+
 ```
+
+2 pot : change parameter
+2 button : sample hold, select song,
