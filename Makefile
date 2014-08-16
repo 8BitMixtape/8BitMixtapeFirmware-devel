@@ -9,18 +9,25 @@
 # CLOCK ........ Target AVR clock rate in Hertz
 # OBJECTS ...... The object files created from your source files. This list is
 #                usually the same as the list of source files with suffix ".o".
-# PROGRAMMER ... Options to avrdude which define the hardware you use for
+# AVRDUDE_PROGRAMMER ... Options to avrdude which define the hardware you use for
 #                uploading to the AVR and the interface where this hardware
 #                is connected. We recommend that you leave it undefined and
 #                add settings like this to your ~/.avrduderc file:
-#                   default_programmer = "stk500v2"
+#                   default_AVRDUDE_PROGRAMMER = "stk500v2"
 #                   default_serial = "avrdoper"
 # FUSES ........ Parameters for avrdude to flash the fuses appropriately.
 
+#DEVICE
 DEVICE		= attiny85
 CLOCK		= 16500000
-PROGRAMMER	= -cstk500v1 -P/dev/cu.usbserial-A5029U9R -b19200
+
+#PROGRAMMER
+PROGRAMMER	= stk500v1
+SERIAL_DEVICE = /dev/cu.usbserial-A5029U9R
+BAUDRATE	= 19200
 FUSES		= -Uefuse:w:0xff:m -Uhfuse:w:0xdf:m -Ulfuse:w:0xe2:m
+
+#AVR
 AVRDIR		= /Applications/Development/Arduino.app/Contents/Resources/Java/hardware/tools/avr
 AVRBIN		= $(AVRDIR)/bin
 AVRCONFIG	= $(AVRDIR)/etc/avrdude.conf
@@ -50,8 +57,8 @@ OBJECTS		= main
 
 
 # Tune the lines below only if you know what you are doing:
-
-AVRDUDE = $(AVRBIN)/avrdude $(PROGRAMMER) -p $(DEVICE) -C $(AVRCONFIG)
+AVRDUDE_PROGRAMMER = -c$(PROGRAMMER) -P$(SERIAL_DEVICE) -b$(BAUDRATE)
+AVRDUDE = $(AVRBIN)/avrdude $(AVRDUDE_PROGRAMMER) -p $(DEVICE) -C $(AVRCONFIG)
 COMPILE = $(AVRBIN)/avr-gcc -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE)
 
 # symbolic targets:
